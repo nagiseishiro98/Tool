@@ -6,10 +6,9 @@ const { spawn } = require("child_process");
 const path = require("path");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Serve static files
-app.use(express.static('public'));
 
 // Main route - serve the ultimate GUI
 app.get("/", (req, res) => {
